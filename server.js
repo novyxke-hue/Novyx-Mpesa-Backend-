@@ -8,7 +8,12 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 10000;
-
+app.get("/api/health", (req, res) => {
+  res.json({
+    status: "ready",
+    service: "NOVYX M-Pesa Backend"
+  });
+});
 const TICKET_PRICES = {
   "Early Bird": 500,
   "Regular": 700,
